@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Financial Plot</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://unpkg.com/simple-statistics@5.0.0/dist/simple-statistics.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.7/d3.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+    body {
+      background-color: #747c83;
+    }
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+tbody>tr:nth-child(even){background-color: #8e979f !important}
+tbody>tr:nth-child(odd){background-color: #fff !important}
+th {
+  background-color: #2f3439;
+  color: white;
+}
+
+div .company {
+  color: white;
+}
+
+div .panel-body {
+  color: white;
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>
+        Amazon Financial Report
+        <span id="report-date" style="float: right;">2019</span>
+      </h1>
+      <p></p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-primary">
+          <div class="panel-body">
+          <strong> Company Profile </strong> 
+          </div>
+        </div>
+        <div class="company">
+          Amazon is among the world's highest-grossing online retailers, with $281 billion in net sales and approximately 
+          $365 billion in estimated physical/digital gross merchandise volume (GMV) in 2019.
+          Online product and digital media sales comprised 50% of net revenue in 2019, followed by commissions, 
+          related fulfillment and shipping fees, and other third-party seller services (19%), 
+          Amazon Web Services' cloud computing, storage, database, and other offerings (13%), 
+          Prime membership fees and other subscription-based services (7%), product sales at Whole Foods and other physical store retail formats (6%), 
+          and advertising services and cobranded credit cards (5%). 
+          International segments constituted 27% of Amazon's non-AWS sales in 2019, led by Germany, the United Kingdom, and Japan.
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-body">
+          <br>
+          <strong> Stock Performance </strong>
+          </div>
+        </div>
+        <div id="plot"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <table id="summary-table" class="table table-striped table-inverse">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Open</th>
+              <th>High</th>
+              <th>Low</th>
+              <th>Close</th>
+              <th>Volume</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="plots.js"></script>
+</body>
+
+</html>
